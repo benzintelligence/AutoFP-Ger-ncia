@@ -1,0 +1,420 @@
+﻿@model AutoFP.Gerencia.MVC.UI.ViewModel.Pedido.NewPedidoViewModel
+
+@{
+    ViewBag.Title = "Novo pedido";
+}
+
+<h2>Pedido</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Registro de novo pedido</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @Html.HiddenFor(model => model.ClienteId)
+
+        <!-- Cliente -->
+        <div class="col-md-11">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Identificação do cliente
+                    </h3>
+                    <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-md-1"></div>
+                        <div class="col-sm-2">
+                            <label for="rdnPF">Pessoa física</label>
+                            @Html.RadioButtonFor(x => x.IsPessoaFisica, true, new { id = "rdnPF", @class = "gpTipoPessoa" })
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="rdnPJ">Pessoa jurídica</label>
+                            @Html.RadioButtonFor(x => x.IsPessoaFisica, false, new { id = "rdnPJ", @class = "gpTipoPessoa" })
+                        </div>
+                    </div>
+
+                    <div id="divPessoaFisica">
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <label for="chkBoleto" class="control-label">Número de CPF</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="Localize o cliente via CPF" />
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-sm btn-primary">Buscar</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <label class="control-label">Cliente</label>
+                            </div>
+                            <div class="col-md-2">
+                                <span id="lblCliente">Paulo Rodrigues</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <label class="control-label">CPF</label>
+                            </div>
+                            <div class="col-md-2">
+                                <span id="lblCliente">387.632.087-88</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="divPessoaJuridica">
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <label for="chkBoleto" class="control-label">Número de CNPJ</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="Localize o cliente via CNPJ" />
+                            </div>
+                            <div class="col-md-5">
+                                <button class="btn btn-sm btn-primary">Buscar</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <label class="control-label">CNPJ</label>
+                            </div>
+                            <div class="col-md-2">
+                                <span id="lblCliente">fsfsdfsdf.0001/21</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <label class="control-label">Razão Social</label>
+                            </div>
+                            <div class="col-md-8">
+                                <span id="lblCliente">AutoFP</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <label class="control-label">Nome fantasia</label>
+                            </div>
+                            <div class="col-md-8">
+                                <span id="lblCliente">AutoFP - Comércio eletrônico em peças automotivas</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <label class="control-label">Inscrição estadual</label>
+                            </div>
+                            <div class="col-md-8">
+                                <span id="lblCliente">adasdasd.adasdadasdsad-54</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <label class="control-label">Inscrição municipal</label>
+                            </div>
+                            <div class="col-md-8">
+                                <span id="lblCliente">sdfs6f4s6fs4fs64fsf</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <table class="table tab-content table-hover table-bordered table-responsive table-condensed">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Endereço de cobrança</th>
+                                    <th>Endereço de entrega</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CEP</td>
+                                    <td id="colCep_cobranca"></td>
+                                    <td id="colCep_entrega"></td>
+                                </tr>
+                                <tr>
+                                    <td>Logradouro</td>
+                                    <td id="colLogradouro_cobranca"></td>
+                                    <td id="colLogradouro_entrega"></td>
+                                </tr>
+                                <tr>
+                                    <td>Número</td>
+                                    <td id="colNumero_cobranca"></td>
+                                    <td id="colNumero_entrega"></td>
+                                </tr>
+                                <tr>
+                                    <td>Complemento</td>
+                                    <td id="colComplemento_cobranca"></td>
+                                    <td id="colComplemento_entrega"></td>
+                                </tr>
+                                <tr>
+                                    <td>Bairro</td>
+                                    <td id="colBairro_cobranca"></td>
+                                    <td id="colBairro_entrega"></td>
+                                </tr>
+                                <tr>
+                                    <td>Cidade</td>
+                                    <td id="colCidade_cobranca"></td>
+                                    <td id="colCidade_entrega"></td>
+                                </tr>
+                                <tr>
+                                    <td>Estado</td>
+                                    <td id="colEstado_cobranca"></td>
+                                    <td id="colEstado_entrega"></td>
+                                </tr>
+                                <tr>
+                                    <td>Referência</td>
+                                    <td id="colPontoReferencia_cobranca"></td>
+                                    <td id="colPontoReferencia_entrega"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label class="control-label">E-mail</label>
+                        </div>
+                        <div class="col-md-2">
+                            <span id="colEmail">pauloroberto.prrl@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label class="control-label">Telefone</label>
+                        </div>
+                        <div class="col-md-3">
+                            <span id="colTelefone1">11 2566-0030 (Fixo)</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span id="colTelefone2">11 99653-2953 (Celular)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carrinho -->
+        <div class="col-md-11">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Carrinho de compras
+                    </h3>
+                    <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+                </div>
+                <div class="panel-body">
+
+                    <div class="form-inline">
+                        <h4>Veículo</h4>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Montadora</label>
+                            <div class="col-md-10">
+                                @Html.DropDownList("ddlMontadoras", new List<SelectListItem>(), "Selecione uma montadora", new {@class = "form-control"})
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Carro</label>
+                            <div class="col-md-10">
+                                @Html.DropDownList("ddlCarros", new List<SelectListItem>(), "Selecione um veículo", new {@class = "form-control"})
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Modelo</label>
+                            <div class="col-md-10">
+                                @Html.DropDownList("ddlModelos", new List<SelectListItem>(), "Selecione um modelo/ano", new {@class = "form-control"})
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr/>
+                    <h4>Produto</h4>
+
+                    <div class="form-inline">
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Peça</label>
+                                <div class="col-md-10">
+                                    <select class="form-control">
+                                        <option>Selecione</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Marca</label>
+                                <div class="col-md-10">
+                                    <select class="form-control">
+                                        <option>Selecione</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="col-sm-12">
+                        <hr />
+                        <button class="btn btn-primary">Buscar peças</button>
+                    </div>
+
+                    <div class="col-md-12">
+                        <hr />
+                        <div class="col-lg-3">
+                            <label>Valor do pedido: R$ 100,00</label>
+                        </div>
+                        <div class="col-lg-3">
+                            <button class="btn btn-sm btn-success">Atualizar pedido</button>
+                        </div>
+                    </div>
+                    <br /><br />
+                    <div class="col-sm-12">
+                        <table class="table table-bordered table-condensed tab-content table-hover">
+                            <thead>
+                            <tr>
+                                <th>ID#</th>
+                                <th>Peça</th>
+                                <th>Quantidade</th>
+                                <th>Valor unitário</th>
+                                <th>Valor total</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Coxin</td>
+                                <td>
+                                    <input type="number" value="1" style="width: 52px" min="1" max="9999"/>
+                                </td>
+                                <td>R$ 50,00</td>
+                                <td>R$ 100,00</td>
+                                <td>
+                                    <button>Remover</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formas de Pagamento-->
+        <div class="col-md-11">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Formas de pagamento
+                    </h3>
+                    <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Data de pagamento</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="date" class="form-control" />
+                        </div>
+                    </div>
+
+                    <!-- BOLETO -->
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <input type="checkbox" id="chkBoleto" />
+                            <label for="chkBoleto" class="control-label">Boleto</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="number" class="form-control" placeholder="Qual o valor pago no boleto?" />
+                        </div>
+                    </div>
+
+                    <!-- Transferência -->
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <input type="checkbox" id="chkTransferencia" />
+                            <label for="chkTransferencia" class="control-label">Transf. Bancária</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="number" class="form-control" placeholder="Qual o valor transferido?" />
+                        </div>
+                    </div>
+
+                    <!-- Débito 1 -->
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <input type="checkbox" id="chkDebito" />
+                            <label for="chkDebito" class="control-label">Cartão em débito 1</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="number" class="form-control" placeholder="Qual o valor pago no débito?" />
+                        </div>
+                    </div>
+
+                    <!-- Débito 2 -->
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <input type="checkbox" id="chkDebito" />
+                            <label for="chkDebito" class="control-label">Cartão em débito 2</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="number" class="form-control" placeholder="Qual o valor pago no débito?" />
+                        </div>
+                    </div>
+
+                    <!-- Cartão de crédito 1 -->
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <input type="checkbox" id="chkCredito" />
+                            <label for="chkCredito" class="control-label">Cartão de crédito 1</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="number" class="form-control" placeholder="Qual o valor pago no crédito?" />
+                        </div>
+                    </div>
+
+                    <!-- Cartão de crédito 2 -->
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <input type="checkbox" id="chkCredito" />
+                            <label for="chkCredito" class="control-label">Cartão de crédito 2</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="number" class="form-control" placeholder="Qual o valor pago no crédito?" />
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Registrar pedido" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Retornar para listagem", "Index")
+</div>
+
+@Scripts.Render("~/bundles/pedido")

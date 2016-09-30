@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddressCEPInvalid" xml:space="preserve">
+    <value>Preencha o campo CEP</value>
+  </data>
+  <data name="AddressComplementInvalid" xml:space="preserve">
+    <value>O complemento deve possuir entre 2 à 50 caracteres</value>
+  </data>
+  <data name="AddressNeighborhoodInvalid" xml:space="preserve">
+    <value>Preencha informando seu bairro</value>
+  </data>
+  <data name="AddressNumberInvalid" xml:space="preserve">
+    <value>Preencha o número referente ao seu endereço</value>
+  </data>
+  <data name="AddressPointReferenceInvalid" xml:space="preserve">
+    <value>Informe um ponto de referência</value>
+  </data>
+  <data name="AddressStreetInvalid" xml:space="preserve">
+    <value>Preencha o logradouro</value>
+  </data>
+  <data name="CarNameInvalid" xml:space="preserve">
+    <value>Nome permitido entre 1 à 50 carateres</value>
+  </data>
+  <data name="CategoriesPieceSelectedInvalid" xml:space="preserve">
+    <value>Selecione as categorias de peças que a marca trabalha</value>
+  </data>
+  <data name="CategoryPieceIdInvalid" xml:space="preserve">
+    <value>Código de categoria de peça deve ser maior que zero</value>
+  </data>
+  <data name="CategoryPieceInvalid" xml:space="preserve">
+    <value>Preencha a categoria de peça</value>
+  </data>
+  <data name="CodeCityToAddressGreaterThanZero" xml:space="preserve">
+    <value>Selecione o município referência ao endereço</value>
+  </data>
+  <data name="CodeCityToStateGreaterThanZero1" xml:space="preserve">
+    <value>Código de cidade referência à estado deve ser maior que zero</value>
+  </data>
+  <data name="CodeFrontAndBackEmpty" xml:space="preserve">
+    <value>Os códigos: traseiro e dianteiro não podem ser vazios simultaneamente</value>
+  </data>
+  <data name="CodeFrontAndBackNotEmpty" xml:space="preserve">
+    <value>Os códigos: traseiro e dianteiro não podem ser informados simultaneamente</value>
+  </data>
+  <data name="CodeInvalidStatusToPiece" xml:space="preserve">
+    <value>Código referência de status de peça (nova ou recondicionada) deve ser maior que zero</value>
+  </data>
+  <data name="CodePersonJuridicalGreaterThanZero" xml:space="preserve">
+    <value>Código de pessoa jurídica deve ser maior que zero</value>
+  </data>
+  <data name="CodeProductMarkGreaterThanZero" xml:space="preserve">
+    <value>Código referência de marca para peça deve ser maior que zero</value>
+  </data>
+  <data name="CodeProviderToProductGreaterThanZero" xml:space="preserve">
+    <value>Código referência de fornecedor para peça deve ser maior que zero</value>
+  </data>
+  <data name="DescriptionStateInvalid" xml:space="preserve">
+    <value>Preencha o nome do estado corretamente</value>
+  </data>
+  <data name="DocumentCnpjInvalid" xml:space="preserve">
+    <value>Número de CNPJ inválido</value>
+  </data>
+  <data name="InvalidAddressId" xml:space="preserve">
+    <value>Código de endereço deve ser maior que zero</value>
+  </data>
+  <data name="InvalidAutomobileManufacturerID" xml:space="preserve">
+    <value>O código da montadora deve ser maior que zero.</value>
+  </data>
+  <data name="InvalidCarModelYearInterval" xml:space="preserve">
+    <value>Ano de modelo do carro está fora do intervalo {0} à {1}</value>
+  </data>
+  <data name="InvalidCityId" xml:space="preserve">
+    <value>Código para cidade deve ser maior que zero</value>
+  </data>
+  <data name="InvalidClientId" xml:space="preserve">
+    <value>Código de cliente deve ser maior que zero</value>
+  </data>
+  <data name="InvalidCodeCarGreaterThanZero" xml:space="preserve">
+    <value>Código de referência a carro deve ser maior que zero</value>
+  </data>
+  <data name="InvalidCodeCarModelGreaterThanZero" xml:space="preserve">
+    <value>Código de referência ao modelo do carro deve ser maior que zero</value>
+  </data>
+  <data name="InvalidCodeGaleryToPieceGreaterThanZero" xml:space="preserve">
+    <value>Código referência a peça na galeria de imagens deve ser maior que zero</value>
+  </data>
+  <data name="InvalidCodeLinePecaGreaterThanZero" xml:space="preserve">
+    <value>Código de linha de peça paralela deve ser maior que zero</value>
+  </data>
+  <data name="InvalidDDDTelephone" xml:space="preserve">
+    <value>DDD inválido, deve haver apenas 2 números</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>Email inválido</value>
+  </data>
+  <data name="InvalidEmailId" xml:space="preserve">
+    <value>Código de email deve ser maior que zero</value>
+  </data>
+  <data name="InvalidGaleryId" xml:space="preserve">
+    <value>Código para item em galeria de produto deve ser maior que zero</value>
+  </data>
+  <data name="InvalidManufacturerDescription" xml:space="preserve">
+    <value>Descrição da montadoura deve ter de 2 à 50 caracteres, para mais, fale com o administrador</value>
+  </data>
+  <data name="InvalidManufacturerToCarCodeGreaterThanZero" xml:space="preserve">
+    <value>Código da montadora para o carro deve ser mair que zero</value>
+  </data>
+  <data name="InvalidMarkToCarCodeGreaterThanZero" xml:space="preserve">
+    <value>Código da marca de peças deve ser maior que zero</value>
+  </data>
+  <data name="InvalidPersonId" xml:space="preserve">
+    <value>Código de pessoa deve ser maior que zero</value>
+  </data>
+  <data name="InvalidPieceId" xml:space="preserve">
+    <value>Código de peça deve ser maior que zero</value>
+  </data>
+  <data name="InvalidPiecePositionId" xml:space="preserve">
+    <value>Código para posição de peça deve ser maior que zero</value>
+  </data>
+  <data name="InvalidProviderId" xml:space="preserve">
+    <value>Código de fornecedor deve ser maior que zero</value>
+  </data>
+  <data name="InvalidStateId" xml:space="preserve">
+    <value>Código para estado deve ser maior que zero</value>
+  </data>
+  <data name="InvalidTelephone" xml:space="preserve">
+    <value>Número de telefone inválido</value>
+  </data>
+  <data name="InvalidTelephoneId" xml:space="preserve">
+    <value>Código de telefone deve ser maior que zero</value>
+  </data>
+  <data name="InvalidTypePerson" xml:space="preserve">
+    <value>O tipo de pessoa deve ser pessoa física ou juridica, valor inválido</value>
+  </data>
+  <data name="InvalidUf" xml:space="preserve">
+    <value>UF de estado inválida</value>
+  </data>
+  <data name="MarkInvalidCaractere" xml:space="preserve">
+    <value>Descrição da marca deve ter de 2 à 50 caracteres, para mais, fale com o administrador.</value>
+  </data>
+  <data name="NameFantasyEmpty" xml:space="preserve">
+    <value>Nome fantasia não pode estar em branco</value>
+  </data>
+  <data name="NamePerson" xml:space="preserve">
+    <value>Nome inválido</value>
+  </data>
+  <data name="NumeroDeCpfInvalido" xml:space="preserve">
+    <value>Por gentileza, verifique o número de CPF</value>
+  </data>
+  <data name="ParallelLineNumberInvalid" xml:space="preserve">
+    <value>O número de linha paralela informado não é um valor válido</value>
+  </data>
+  <data name="ParallelLineNumberNotInformation" xml:space="preserve">
+    <value>O número de linha paralela deve ser informado quando a peça não é original</value>
+  </data>
+  <data name="PasswordEmpty" xml:space="preserve">
+    <value>A senha não pode estar em branco</value>
+  </data>
+  <data name="ProductCodeDistributor" xml:space="preserve">
+    <value>Preencha o código do distribuidor</value>
+  </data>
+  <data name="ProductDescriptionInvalid" xml:space="preserve">
+    <value>Preencha a descrição do produto</value>
+  </data>
+  <data name="ProductMeasureInvalid" xml:space="preserve">
+    <value>Informe as medidas da peça</value>
+  </data>
+  <data name="ProductNameInvalid" xml:space="preserve">
+    <value>O nome do produto é obrigatório</value>
+  </data>
+  <data name="ProductOriginalNotLine" xml:space="preserve">
+    <value>Linha de peça paralela não se aplica em peças originais</value>
+  </data>
+  <data name="ProductPriceInvalid" xml:space="preserve">
+    <value>O valor da peça deve ser maior que zero</value>
+  </data>
+  <data name="RamalTelephoneInvalid" xml:space="preserve">
+    <value>Ramal telefônico inválido</value>
+  </data>
+  <data name="RazaoSocialEmpty" xml:space="preserve">
+    <value>Razão social não pode estar em branco</value>
+  </data>
+  <data name="SobrenomePerson" xml:space="preserve">
+    <value>Sobrenome inválido</value>
+  </data>
+  <data name="TelephoneLength" xml:space="preserve">
+    <value>Telefone deve possuir 11 caracteres para celular e 10 para fixo, incluindo DDD.</value>
+  </data>
+  <data name="TelephoneRelationshipId" xml:space="preserve">
+    <value>Código de telefone incorreto</value>
+  </data>
+  <data name="YearInvalid" xml:space="preserve">
+    <value>O ano informado não é válido</value>
+  </data>
+</root>

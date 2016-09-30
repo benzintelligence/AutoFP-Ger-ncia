@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C73780B-34D7-43B4-B84D-56A85281D5AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoFP.Gerencia.Application</RootNamespace>
+    <AssemblyName>AutoFP.Gerencia.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AppService\Base\BaseAppService.cs" />
+    <Compile Include="AppService\CategoriaPecaAppService.cs" />
+    <Compile Include="AppService\MarcaAppService.cs" />
+    <Compile Include="AppService\MontadoraAppService.cs" />
+    <Compile Include="AppService\Pessoa\ClienteAppService.cs" />
+    <Compile Include="AppService\Pessoa\FornecedorAppService.cs" />
+    <Compile Include="AppService\Produto\PecaAppService.cs" />
+    <Compile Include="Factories\CategoriaPecaAppFactory.cs" />
+    <Compile Include="Factories\ClienteAppFactory.cs" />
+    <Compile Include="Factories\EmailAppFactory.cs" />
+    <Compile Include="Factories\EnderecoAppFactory.cs" />
+    <Compile Include="Factories\FornecedorAppFactory.cs" />
+    <Compile Include="Factories\MarcaAppFactory.cs" />
+    <Compile Include="Factories\MontadoraAppFactory.cs" />
+    <Compile Include="Factories\PecaAppFactory.cs" />
+    <Compile Include="Factories\PessoaFisicaAppFactory.cs" />
+    <Compile Include="Factories\PessoaJuridicaAppFactory.cs" />
+    <Compile Include="Factories\TelefoneAppFactory.cs" />
+    <Compile Include="Interface\Base\IBaseAppService.cs" />
+    <Compile Include="Interface\ICategoriaPecaAppService.cs" />
+    <Compile Include="Interface\IMarcaAppService.cs" />
+    <Compile Include="Interface\IMontadoraAppService.cs" />
+    <Compile Include="Interface\IPedidoAppService.cs" />
+    <Compile Include="Interface\Pessoa\IClienteAppService.cs" />
+    <Compile Include="Interface\Pessoa\IFornecedorAppService.cs" />
+    <Compile Include="Interface\Produto\IPecaAppService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueObjects\HelperMapping\EnderecoMapping.cs" />
+    <Compile Include="ValueObjects\HelperMapping\TelefoneMapping.cs" />
+    <Compile Include="ValueObjects\Resource\MessagesErrors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessagesErrors.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ValueObjects\Resource\MessagesSuccess.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessagesSuccess.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ValueObjects\TransferObject\Carro\SelectListAnoModeloCarroTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\Carro\SelectListCarroTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\CategoriaPeca\CreateCategoriaPecaTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\CategoriaPeca\ListCategoriaPecaTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\CategoriaPeca\SelectListCategoriaPecaTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\CategoriaPeca\UpdateCategoriaPecaTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\Cliente\CreateClienteTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\Email\CreateEmailTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\Endereco\CreateEnderecoTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\Fornecedor\CreateFornecedorTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\Fornecedor\ListFornecedorTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\Fornecedor\SelectListFornecedorTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\Marca\CreateMarcaTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\Marca\DetailMarcaTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\Marca\ListMarcaTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\Marca\UpdateMarcaTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\Montadora\CreateMontadoraTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\Montadora\ListMontadoraTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\Montadora\UpdateMontadoraTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\Peca\CreatePecaTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\PessoaFisica\CreatePessoaFisicaTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\PessoaFisica\ListClienteTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\PessoaJuridica\CreatePessoaJuridicaTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\PosicaoPeca\CreatePosicaoPecaTo.cs" />
+    <Compile Include="ValueObjects\TransferObject\Telefone\CreateTelefoneTo.cs" />
+    <Compile Include="ValueObjects\Validation\ValidationAppResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ValueObjects\TransferObject\Pedido\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutoFP.Gerencia.Domain\AutoFP.Gerencia.Domain.csproj">
+      <Project>{f184da1b-7790-4c13-b1c3-9d69ef273ab9}</Project>
+      <Name>AutoFP.Gerencia.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AutoFP.Gerencia.Infra.Data\AutoFP.Gerencia.Infra.Data.csproj">
+      <Project>{cfe4dcf7-5db5-4108-9073-238763fc2bce}</Project>
+      <Name>AutoFP.Gerencia.Infra.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ValueObjects\Resource\MessagesErrors.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessagesErrors.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValueObjects\Resource\MessagesSuccess.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessagesSuccess.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

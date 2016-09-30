@@ -1,0 +1,43 @@
+﻿@model AutoFP.Gerencia.MVC.UI.ViewModel.Marca.DetailMarcaViewModel
+
+@{
+    ViewBag.Title = "Detalhes de marca";
+}
+
+<h2>Marcas</h2>
+
+<div>
+    <h4>Detalhes de marca</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destacar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destacar)
+        </dd>
+
+        <dd>
+            <h4> @Html.DisplayNameFor(model => model.ListCategoryVm) </h4>
+        </dd>
+        @foreach (var item in Model.ListCategoryVm)
+        {
+            <dd>
+                <label> @item.CategoriaPecaId - </label> @item.Descricao
+            </dd>
+        }
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Atualizar", "Edit", new { id = Model.MarcaId }) |
+    @Html.ActionLink("Retornar para listagem", "Index")
+</p>

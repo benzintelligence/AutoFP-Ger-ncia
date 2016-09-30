@@ -1,0 +1,44 @@
+﻿@model IEnumerable<AutoFP.Gerencia.MVC.UI.ViewModel.CategoriaPeca.ListCategoriaPecaViewModel>
+
+@{
+    ViewBag.Title = "Categoria de peças";
+}
+
+<h2>Categoria de peças</h2>
+
+<p>
+    @Html.ActionLink("Registrar nova", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoriaPecaId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr id="row-@item.CategoriaPecaId">
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoriaPecaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new {id = item.CategoriaPecaId}) |
+                <button class="btnRemove" id="@item.CategoriaPecaId" name="@item.Descricao">Remover</button>
+            </td>
+        </tr>
+    }
+</table>
+
+<input type="hidden" id="title" value="Categoria:" />
+<input type="hidden" id="message" value="Deseja remover a categoria" />
+<input type="hidden" id="urlRemove" value="/CategoriaPeca/Delete"/>
+
+@Html.Partial("_ModalRemover")

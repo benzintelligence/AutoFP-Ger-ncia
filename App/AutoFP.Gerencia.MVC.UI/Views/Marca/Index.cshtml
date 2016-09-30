@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AutoFP.Gerencia.MVC.UI.ViewModel.Marca.ListMarcaViewModel>
+
+@{
+    ViewBag.Title = "Marca";
+}
+
+<h2>Marcas</h2>
+
+<p>
+    @Html.ActionLink("Registrar nova", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MarcaId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Destacar)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr id="row-@item.MarcaId">
+            <td>
+                @Html.DisplayFor(modelItem => item.MarcaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destacar)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new {id = item.MarcaId}) |
+                @Html.ActionLink("Detalhes", "Details", new {id = item.MarcaId}) |
+                <button class="btnRemove" id="@item.MarcaId" name="@item.Descricao">Remover</button>
+            </td>
+        </tr>
+    }
+</table>
+
+<input type="hidden" id="title" value="Marca:" />
+<input type="hidden" id="message" value="Deseja remover a marca" />
+<input type="hidden" id="urlRemove" value="/Marca/Delete" />
+
+@Html.Partial("_ModalRemover")

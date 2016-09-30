@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - AutoFP</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body>
+    @if (TempData["notification"] != null)
+    {
+        <div class="alert alert-success" id="notificationData">
+            <div class="container">
+                @TempData["notification"]
+            </div>
+        </div>
+    }
+
+    <div id="messageNotification" class="alert alert-success hidden">
+        <div id="messageNotificationContainer" class="container"></div>
+    </div>
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("AutoFP", "Index", "Dashboard", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        @Html.ActionLink("Categoria peça", "Index", "CategoriaPeca")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Cliente", "Index", "Cliente")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Fornecedor", "Index", "Fornecedor")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Marca", "Index", "Marca")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Montadora", "Index", "Montadora")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Produtos", "Index", "Peca")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Pedidos", "Index", "Pedido")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Sair", "Logoff", "Autenticacao")
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>Auto FP - Área administrativa</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/notification")
+    @RenderSection("scripts", false)
+</body>
+</html>

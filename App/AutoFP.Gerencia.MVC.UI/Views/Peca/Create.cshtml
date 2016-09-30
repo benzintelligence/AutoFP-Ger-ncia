@@ -1,0 +1,289 @@
+﻿@using AutoFP.Gerencia.Domain.ValueObjects.Enums
+@model AutoFP.Gerencia.MVC.UI.ViewModel.Peca.NewPecaViewModel
+
+@{
+    ViewBag.Title = "Registro de produtos";
+}
+
+<h2>Produtos</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Registro de produtos</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="panel-group form-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                            Produto
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CodigoDistribuidor, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.CodigoDistribuidor, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.CodigoDistribuidor, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Descricao, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextAreaFor(model => model.Descricao, new { @class = "form-control", rows = 5, placeholder = "Digite a descrição" })
+                                @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Medida, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Medida, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Medida, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PrecoDe, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.PrecoDe, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PrecoDe, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PrecoPara, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.PrecoPara, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PrecoPara, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Status, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(x => x.Status, EnumHelper.GetSelectList(typeof(PecaStatus)), "Selecione o status", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Original, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <div class="checkbox">
+                                    @Html.EditorFor(model => model.Original)
+                                    @Html.ValidationMessageFor(model => model.Original, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="divPecaParalela">
+                            @Html.LabelFor(model => model.ParalelaLinhaNumero, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(x => x.ParalelaLinhaNumero, EnumHelper.GetSelectList(typeof(PecaParalela)), "Selecione a linha", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ParalelaLinhaNumero, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Importada, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <div class="checkbox">
+                                    @Html.EditorFor(model => model.Importada)
+                                    @Html.ValidationMessageFor(model => model.Importada, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CategoriaPecaId, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(x => x.CategoriaPecaId, Model.CategoriasPecas, "Selecione a categoria", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.CategoriaPecaId, "", new {@class = "text-danger"})
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.MarcaId, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(x => x.MarcaId, new List<SelectListItem>(), "Selecione primeiro a categoria", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.MarcaId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                            Posicionamento
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.CheckBoxFor(model => model.PiecePositionInformation, new { id = "chkPositionPiece" })
+                                @Html.LabelFor(model => model.PiecePositionInformation, new { @class = "col-sm-4", @for = "chkPositionPiece" })
+                            </div>
+                        </div>
+
+                        <div id="divPositionPiece" class="hidden">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CodigoDianteiro, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.CodigoDianteiro, new { htmlAttributes = new { @class = "form-control", placeholder = "Informe este ou código traseiro" } })
+                                    @Html.ValidationMessageFor(model => model.CodigoDianteiro, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CodigoTraseiro, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.CodigoTraseiro, new { htmlAttributes = new { @class = "form-control", placeholder = "Informe este ou código dianteiro" } })
+                                    @Html.ValidationMessageFor(model => model.CodigoTraseiro, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.LadoEsquerdo, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    <div class="checkbox">
+                                        @Html.EditorFor(model => model.LadoEsquerdo)
+                                        @Html.ValidationMessageFor(model => model.LadoEsquerdo, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.LadoDireito, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    <div class="checkbox">
+                                        @Html.EditorFor(model => model.LadoDireito)
+                                        @Html.ValidationMessageFor(model => model.LadoDireito, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                            Veículos
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Montadora</label>
+                                <div class="col-md-10">
+                                    @Html.DropDownList("ddlMontadoras", Model.Montadoras, "Selecione uma montadora", new {@class = "form-control"})
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Carro</label>
+                                <div class="col-md-10">
+                                    @Html.DropDownList("ddlCarros", new List<SelectListItem>(), "Selecione um veículo", new { @class = "form-control" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Modelo</label>
+                                <div class="col-md-10">
+                                    @Html.DropDownList("ddlModelos", new List<SelectListItem>(), "Selecione um modelo/ano", new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <br /><br />
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <span class="btn btn-sm btn-success" id="btnAddCar"><i class="glyphicon glyphicon-plus"></i> ADICIONAR CARRO</span>
+                                    <span class="btn btn-sm btn-warning" id="btnCleanCars"><i class="glyphicon glyphicon-refresh"></i> REDEFINIR LISTA</span>
+                                    <h4><span id="notificationAddCar" class="label label-primary hidden"></span></h4>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="table-responsive">
+                                <label>Garanta que todos os carros aqui selecionados estão corretos</label>
+                                <table class="table table-hover table-bordered" id="tblCars">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Montadora</th>
+                                            <th>Carro</th>
+                                            <th>Modelo</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                            Galeria
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p> @Html.ValidationMessageFor(model => model.SelectedPhotos, "", new { @class = "text-danger" }) </p>
+                        @Html.HiddenFor(x => x.SelectedPhotos, new { id = "hdnSelectedPhotos" })
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <span class="btn btn-sm btn-success" id="btnAddPhoto"><i class="glyphicon glyphicon-plus"></i> SELECIONAR FOTOS</span>
+                                <div class="hidden">
+                                    <input type="file" multiple="multiple" id="fileUpload" name="somefile"/>
+                                </div>
+                                <h4><span id="notificationAddPhotos" class="label label-primary "></span></h4>
+                                <div id="wrapper" style="margin-top: 20px;">
+                                    <div id="image-holder"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Registrar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Retornar para listagem", "Index")
+</div>
+
+@Scripts.Render("~/bundles/peca")

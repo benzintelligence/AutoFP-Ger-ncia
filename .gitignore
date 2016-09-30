@@ -1,0 +1,13 @@
+packages/
+App/AutoFP.Gerencia.Application/bin/
+App/AutoFP.Gerencia.Application/obj/
+App/AutoFP.Gerencia.Domain/bin/
+App/AutoFP.Gerencia.Domain/obj/
+App/AutoFP.Gerencia.Infra.CrossCutting.Ioc/bin/
+App/AutoFP.Gerencia.Infra.CrossCutting.Ioc/obj/
+App/AutoFP.Gerencia.Infra.CrossCutting.Security/bin/
+App/AutoFP.Gerencia.Infra.CrossCutting.Security/obj/
+App/AutoFP.Gerencia.Infra.Data/bin/
+App/AutoFP.Gerencia.Infra.Data/obj/
+App/AutoFP.Gerencia.MVC.UI/bin/
+App/AutoFP.Gerencia.MVC.UI/obj/

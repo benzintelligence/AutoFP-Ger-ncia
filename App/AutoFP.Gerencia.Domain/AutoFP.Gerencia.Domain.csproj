@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F184DA1B-7790-4C13-B1C3-9D69EF273AB9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoFP.Gerencia.Domain</RootNamespace>
+    <AssemblyName>AutoFP.Gerencia.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Email.cs" />
+    <Compile Include="Entities\Localizacao\Endereco.cs" />
+    <Compile Include="Entities\Montadora.cs" />
+    <Compile Include="Entities\Order\ItemPedido.cs" />
+    <Compile Include="Entities\Order\Pedido.cs" />
+    <Compile Include="Entities\Pessoa\Cliente.cs" />
+    <Compile Include="Entities\Pessoa\Pessoa.cs" />
+    <Compile Include="Entities\Pessoa\PessoaFisica.cs" />
+    <Compile Include="Entities\Pessoa\PessoaJuridica.cs" />
+    <Compile Include="Entities\Telefone.cs" />
+    <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Entities\Veiculo\AnoModeloCarro.cs" />
+    <Compile Include="Entities\Veiculo\Carro.cs" />
+    <Compile Include="Entities\CategoriaPeca.cs" />
+    <Compile Include="Entities\Pessoa\Fornecedor.cs" />
+    <Compile Include="Entities\Produto\Galeria.cs" />
+    <Compile Include="Entities\Marca.cs" />
+    <Compile Include="Entities\Produto\Peca.cs" />
+    <Compile Include="Entities\Produto\PosicaoPeca.cs" />
+    <Compile Include="Factories\CategoriaPecaFactory.cs" />
+    <Compile Include="Factories\EmailFactory.cs" />
+    <Compile Include="Factories\Localizacao\EnderecoFactory.cs" />
+    <Compile Include="Factories\MarcaFactory.cs" />
+    <Compile Include="Factories\MontadoraFactory.cs" />
+    <Compile Include="Factories\Pessoa\ClienteFactory.cs" />
+    <Compile Include="Factories\Pessoa\FornecedorFactory.cs" />
+    <Compile Include="Factories\Pessoa\PessoaFisicaFactory.cs" />
+    <Compile Include="Factories\Pessoa\PessoaJuridicaFactory.cs" />
+    <Compile Include="Factories\Produto\GaleriaFactory.cs" />
+    <Compile Include="Factories\Produto\PecaFactory.cs" />
+    <Compile Include="Factories\Produto\PosicaoPecaFactory.cs" />
+    <Compile Include="Factories\TelefoneFactory.cs" />
+    <Compile Include="Factories\Veiculo\AnoModeloCarroFactory.cs" />
+    <Compile Include="Factories\Veiculo\CarroFactory.cs" />
+    <Compile Include="Interface\Factories\ICategoriaPecaFactory.cs" />
+    <Compile Include="Interface\Factories\IEmailFactory.cs" />
+    <Compile Include="Interface\Factories\ITelefoneFactory.cs" />
+    <Compile Include="Interface\Factories\Localizacao\IEnderecoFactory.cs" />
+    <Compile Include="Interface\Factories\Pessoa\IClienteFactory.cs" />
+    <Compile Include="Interface\Factories\Pessoa\IFornecedorFactory.cs" />
+    <Compile Include="Interface\Factories\IMarcaFactory.cs" />
+    <Compile Include="Interface\Factories\IMontadoraFactory.cs" />
+    <Compile Include="Interface\Factories\Pessoa\IPessoaFisicaFactory.cs" />
+    <Compile Include="Interface\Factories\Pessoa\IPessoaJuridicaFactory.cs" />
+    <Compile Include="Interface\Factories\Produto\IGaleriaFactory.cs" />
+    <Compile Include="Interface\Factories\Produto\IPecaFactory.cs" />
+    <Compile Include="Interface\Factories\Produto\IPosicaoPecaFactory.cs" />
+    <Compile Include="Interface\Factories\Veiculo\IAnoModeloCarroFactory.cs" />
+    <Compile Include="Interface\Factories\Veiculo\ICarroFactory.cs" />
+    <Compile Include="Interface\Repositories\ICategoriaPecaRepository.cs" />
+    <Compile Include="Interface\Repositories\Pessoa\IClienteRepository.cs" />
+    <Compile Include="Interface\Repositories\Pessoa\IFornecedorRepository.cs" />
+    <Compile Include="Interface\Repositories\IMarcaRepository.cs" />
+    <Compile Include="Interface\Repositories\IMontadoraRepository.cs" />
+    <Compile Include="Interface\Repositories\Produto\IGaleriaRepository.cs" />
+    <Compile Include="Interface\Repositories\Produto\IPecaRepository.cs" />
+    <Compile Include="Interface\Repositories\Veiculo\IAnoModeloCarroRepository.cs" />
+    <Compile Include="Interface\Repositories\Veiculo\ICarroRepository.cs" />
+    <Compile Include="Interface\Services\ICategoriaPecaService.cs" />
+    <Compile Include="Interface\Services\Pessoa\IClienteService.cs" />
+    <Compile Include="Interface\Services\Pessoa\IFornecedorService.cs" />
+    <Compile Include="Interface\Services\IMarcaService.cs" />
+    <Compile Include="Interface\Services\IMontadoraService.cs" />
+    <Compile Include="Interface\Services\Produto\IGaleriaService.cs" />
+    <Compile Include="Interface\Services\Produto\IPecaService.cs" />
+    <Compile Include="Interface\Services\Veiculo\IAnoModeloCarroService.cs" />
+    <Compile Include="Interface\Services\Veiculo\ICarroService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CategoriaPecaService.cs" />
+    <Compile Include="Services\MarcaService.cs" />
+    <Compile Include="Services\MontadoraService.cs" />
+    <Compile Include="Services\Pessoa\ClienteService.cs" />
+    <Compile Include="Services\Pessoa\FornecedorService.cs" />
+    <Compile Include="Services\Produto\GaleriaService.cs" />
+    <Compile Include="Services\Produto\PecaService.cs" />
+    <Compile Include="Services\Veiculo\CarroService.cs" />
+    <Compile Include="ValueObjects\DataTransferObject\Cliente\ClienteDTO.cs" />
+    <Compile Include="ValueObjects\DataTransferObject\Endereco\EnderecoDTO.cs" />
+    <Compile Include="ValueObjects\DataTransferObject\ListClientesDTO.cs" />
+    <Compile Include="ValueObjects\DataTransferObject\MarcaDTO.cs" />
+    <Compile Include="ValueObjects\DataTransferObject\PecaDTO.cs" />
+    <Compile Include="ValueObjects\DataTransferObject\TelefoneDTO.cs" />
+    <Compile Include="ValueObjects\Enums\PecaParalela.cs" />
+    <Compile Include="ValueObjects\Enums\PecaStatus.cs" />
+    <Compile Include="ValueObjects\Enums\PedidoStatus.cs" />
+    <Compile Include="ValueObjects\Enums\Sexo.cs" />
+    <Compile Include="ValueObjects\Enums\TipoPessoa.cs" />
+    <Compile Include="ValueObjects\Enums\TipoTelefone.cs" />
+    <Compile Include="ValueObjects\Enums\UnidadeFederativa.cs" />
+    <Compile Include="ValueObjects\Helpers\AnoHelper.cs" />
+    <Compile Include="ValueObjects\Helpers\EstadoHelper.cs" />
+    <Compile Include="ValueObjects\Helpers\UserRoles.cs" />
+    <Compile Include="ValueObjects\Resource\MessagesDomain.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessagesDomain.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ValueObjects\Validation\ValidationAssertion\AssertionConcern.cs" />
+    <Compile Include="ValueObjects\Validation\ValidationAssertion\DocumentAssertionConcern.cs" />
+    <Compile Include="ValueObjects\Validation\ValidationAssertion\EmailAssertionConcern.cs" />
+    <Compile Include="ValueObjects\Validation\ValidationAssertion\PasswordAssertionConcern.cs" />
+    <Compile Include="ValueObjects\Validation\ValidationResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ValueObjects\Resource\MessagesDomain.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessagesDomain.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

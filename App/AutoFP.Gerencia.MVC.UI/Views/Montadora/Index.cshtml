@@ -1,0 +1,50 @@
+﻿@model IEnumerable<AutoFP.Gerencia.MVC.UI.ViewModel.Montadora.ListMontadoraViewModel>
+
+@{
+    ViewBag.Title = "Montadora";
+}
+
+<h2>Montadoras</h2>
+
+<p>
+    @Html.ActionLink("Registrar nova", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MontadoraId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Montadora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Destacar)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr id="row-@item.MontadoraId">
+            <td>
+                @Html.DisplayFor(modelItem => item.MontadoraId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Montadora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destacar)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new {id = item.MontadoraId}) |
+                <button class="btnRemove" id="@item.MontadoraId" name="@item.Montadora">Remover</button>
+            </td>
+        </tr>
+    }
+</table>
+
+<input type="hidden" id="title" value="Montadora:" />
+<input type="hidden" id="message" value="Deseja remover a montadora" />
+<input type="hidden" id="urlRemove" value="/Montadora/Delete"/>
+
+@Html.Partial("_ModalRemover")
